@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class dBMain
 	{
-    	public static void main(String[] args) throws IOException
+    	public static void main(String[] args) throws IOException, SQLException
     		{
     			dBConnection dBConn = new dBConnection();
     			

@@ -68,8 +68,10 @@ public class XmlNode
         	{
         		List<XmlNode> childs = getChildNodes();
         		if (childs.size() == 0)
-        			return null;
-
+        			{
+        				return null;
+        			}
+        		
         		return childs.get(childs.size() - 1);
         	}
 
@@ -98,8 +100,9 @@ public class XmlNode
         	{
         		NodeList tagList = node.getElementsByTagName(tagName);
         		if (tagList.getLength() == 0)
-        			throw new XmlException("Tag: '" + tagName + "' not present");
-
+        			{
+        				throw new XmlException("Tag: '" + tagName + "' not present");
+        			}
         		NodeList nlList = tagList.item(0).getChildNodes();       
         		Node nValue = (Node) nlList.item(0);
 
@@ -118,34 +121,38 @@ public class XmlNode
 
         public void setAttribute(String name, String value) throws XmlException
         	{
-        		if (parent == null) 
-        			throw new XmlException("Parent node not present.");
-
+        		if (parent == null)
+        			{
+        				throw new XmlException("Parent node not present.");
+        			}
         		node.setAttribute(name, value);
         	}
 
         public void setTag(String name, String value) throws XmlException
         	{
-        		if (parent == null) 
-        			throw new XmlException("Parent node not present.");
-
+        		if (parent == null)
+        			{
+        				throw new XmlException("Parent node not present.");
+        			}
         		XmlNode xmlNode = parent.createNode(name, value);
         		node.appendChild(xmlNode.node);
         	}
 
         public void addChildNode(XmlNode xmlNode) throws XmlException
         	{
-        		if (parent == null) 
-        			throw new XmlException("Parent node not present.");
-
+        		if (parent == null)
+        			{
+        				throw new XmlException("Parent node not present.");
+        			}
         		node.appendChild(xmlNode.node);
         	}
 
         public XmlNode addChildNode(String nodeName) throws XmlException
         	{
-        		if (parent == null) 
-        			throw new XmlException("Parent node not present.");
-
+        		if (parent == null)
+        			{
+        				throw new XmlException("Parent node not present.");
+        			}
         		XmlNode child = parent.createNode(nodeName);
         		node.appendChild(child.getNode());
 

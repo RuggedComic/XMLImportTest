@@ -158,8 +158,6 @@ public class XmlDocument
 				}
 			}
 
-
-
 		public void write(Writer writer, XmlNode node) throws XmlException
 			{
 				try

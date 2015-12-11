@@ -1,7 +1,10 @@
 package TestCore;
 
 import java.io.IOException;
-import dataimport.*;
+import dataimport.dBMain;
+import dataimport.XMLMain;
+import TestCore.TestCoreObj;
+import TestCore.TestCoreStart;
 
 public class TestCore
 	{
@@ -11,16 +14,16 @@ public class TestCore
 		{
 			if (imptype == 0)
 				{
-					dataimport.dBMain();
+					dBMain();
 				}
 			if (imptype == 1)
 				{
-					dataimport.XMLMain();
+					XMLMain();
 				}
 			
-			TestCore.TestCoreObj();
+			TestCoreObj();
 			
-			
+			TestCoreStart();
 		}
 	}
 

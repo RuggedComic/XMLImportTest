@@ -12,5 +12,5 @@ public class XMLMain
     			File dataFile = new File("/data.xml");
     			XMLDataSet dataSet = new XMLDataSet(dataFile);
     			dataSet.display();
-    }
-}	
+    		}
+	}	
