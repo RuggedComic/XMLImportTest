@@ -7,10 +7,10 @@ import xml.utils.XmlException;
 
 public class XMLMain
 	{
-    	public static void main(String[] args) throws SAXException, IOException, XmlException
+    	public static void main (String[] args) throws SAXException, IOException, XmlException
     		{
-    			File dataFile = new File("/data.xml");
-    			XMLDataSet dataSet = new XMLDataSet(dataFile);
-    			dataSet.display();
+    			File dataFile = new File ("/data.xml");
+    			XMLDataSet dataSet = new XMLDataSet (dataFile);
+    			dataSet.display ();
     		}
 	}	

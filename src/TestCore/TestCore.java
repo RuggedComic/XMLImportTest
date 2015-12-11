@@ -10,20 +10,20 @@ public class TestCore
 	{
 		private int imptype;
 		
-		public TestCore() throws IOException
+		public TestCore () throws IOException
 		{
 			if (imptype == 0)
 				{
-					dBMain();
+					dBMain ();
 				}
 			if (imptype == 1)
 				{
-					XMLMain();
+					XMLMain ();
 				}
 			
-			TestCoreObj();
+			TestCoreObj ();
 			
-			TestCoreStart();
+			TestCoreStart ();
 		}
 	}
 
