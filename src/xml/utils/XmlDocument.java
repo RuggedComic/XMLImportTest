@@ -117,7 +117,8 @@ public class XmlDocument
 						DOMSource source						= new DOMSource (document);
 						StreamResult result						= new StreamResult (os);
 
-						transformer.transform (source, result);
+						transformer.transform (source
+												, result);
 					}
 			catch (TransformerConfigurationException e)
 				{
@@ -129,7 +130,8 @@ public class XmlDocument
 				}
 			}
 
-		public void write (File file, XmlNode node) throws XmlException
+		public void write (File file
+							, XmlNode node) throws XmlException
 			{
 			try
 				{
@@ -144,11 +146,13 @@ public class XmlDocument
 					DOMSource source							= new DOMSource (document);
 					StreamResult result							= new StreamResult (file);
 
-					transformer.transform (source, result);
+					transformer.transform (source
+											, result);
 				}
 			catch (TransformerConfigurationException e)
 				{
-					throw new XmlException ("Error in configuration of XML writer", e);
+					throw new XmlException ("Error in configuration of XML writer"
+											, e);
 				}
 			catch (TransformerException e)
 				{
@@ -156,7 +160,8 @@ public class XmlDocument
 				}
 			}
 
-		public void write (Writer writer, XmlNode node) throws XmlException
+		public void write (Writer writer
+							, XmlNode node) throws XmlException
 			{
 				try
 					{
@@ -171,15 +176,18 @@ public class XmlDocument
 						DOMSource source						= new DOMSource (document);
 						StreamResult result						= new StreamResult (writer);
 
-						transformer.transform (source, result);
+						transformer.transform (source
+												, result);
 					}
 				catch (TransformerConfigurationException e)
 					{
-						throw new XmlException ("Error in configuration of XML writer", e);
+						throw new XmlException ("Error in configuration of XML writer"
+												, e);
 					}
 				catch (TransformerException e)
 					{
-						throw new XmlException ("Error in writing XML", e);
+						throw new XmlException ("Error in writing XML"
+												, e);
 					}
 			}
 
@@ -203,11 +211,13 @@ public class XmlDocument
 					{
 						document = createNewDocument();
 					}
-				XmlNode node = new XmlNode (this, document.createElement (nodeName));
+				XmlNode node = new XmlNode (this
+											, document.createElement (nodeName));
 				return node;
 			}
 
-		XmlNode createNode (String nodeName, String nodeValue) throws XmlException
+		XmlNode createNode (String nodeName
+								, String nodeValue) throws XmlException
 			{
 				if (document == null)
 					{
@@ -216,6 +226,7 @@ public class XmlDocument
 				Element node = document.createElement (nodeName);
 				node.appendChild (document.createTextNode (nodeValue));
 
-				return new XmlNode (this, node);
+				return new XmlNode (this
+									, node);
 			}
 	}

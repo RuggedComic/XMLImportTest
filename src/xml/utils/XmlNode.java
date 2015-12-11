@@ -18,7 +18,8 @@ public class XmlNode
     			this.parent = null;
     		}
 
-    	XmlNode (XmlDocument parent, Element node)
+    	XmlNode (XmlDocument parent
+    			, Element node)
     		{
     			this.node 	= node;
     			this.parent = parent;
@@ -44,11 +45,13 @@ public class XmlNode
         		this.parent = parent;
         	}
 
-        public List<XmlNode> getChildNodes ()
+        public List <XmlNode> getChildNodes ()
         	{
         		List <XmlNode> list	= new ArrayList <XmlNode> ();
-        		NodeList nodeList	= node.getChildNodes();
-        		for (int i = 0; i < nodeList.getLength (); i++)
+        		NodeList nodeList	= node.getChildNodes ();
+        		for (int i = 0
+        				; i < nodeList.getLength ()
+        				; i++)
         			{
         				Node n = nodeList.item (i);
         				if (n.getNodeType () == Node.ELEMENT_NODE)
@@ -77,9 +80,11 @@ public class XmlNode
 
         public List <XmlNode> getNodesByTagName (String tagName)
         	{
-        		List<XmlNode> list	= new ArrayList <XmlNode> ();
+        		List <XmlNode> list	= new ArrayList <XmlNode> ();
         		NodeList nodeList	= node.getElementsByTagName (tagName);
-        		for (int i = 0; i < nodeList.getLength (); i++)
+        		for (int i = 0
+        				; i < nodeList.getLength ()
+        				; i++)
         			{
         				Node n = nodeList.item (i);
         				if (n.getNodeType () == Node.ELEMENT_NODE)
@@ -101,7 +106,9 @@ public class XmlNode
         		NodeList tagList = node.getElementsByTagName (tagName);
         		if (tagList.getLength () == 0)
         			{
-        				throw new XmlException ("Tag: '" + tagName + "' not present");
+        				throw new XmlException ("Tag: '"
+        										+ tagName
+        										+ "' not present");
         			}
         		NodeList nlList	= tagList.item (0).getChildNodes ();       
         		Node nValue		= (Node) nlList.item (0);
@@ -119,22 +126,26 @@ public class XmlNode
         		return node.getTagName ();
         	}
 
-        public void setAttribute (String name, String value) throws XmlException
+        public void setAttribute (String name
+        							, String value) throws XmlException
         	{
         		if (parent == null)
         			{
         				throw new XmlException ("Parent node not present.");
         			}
-        		node.setAttribute (name, value);
+        		node.setAttribute (name
+        							, value);
         	}
 
-        public void setTag (String name, String value) throws XmlException
+        public void setTag (String name
+        					, String value) throws XmlException
         	{
         		if (parent == null)
         			{
         				throw new XmlException ("Parent node not present.");
         			}
-        		XmlNode xmlNode = parent.createNode (name, value);
+        		XmlNode xmlNode = parent.createNode (name
+        											, value);
         		node.appendChild (xmlNode.node);
         	}
 
