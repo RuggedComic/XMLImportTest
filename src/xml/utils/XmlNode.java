@@ -14,13 +14,13 @@ public class XmlNode
 
     	XmlNode (Element node)
     		{
-    			this.node = node;
+    			this.node 	= node;
     			this.parent = null;
     		}
 
     	XmlNode (XmlDocument parent, Element node)
     		{
-    			this.node = node;
+    			this.node 	= node;
     			this.parent = parent;
     		}
 
@@ -154,7 +154,7 @@ public class XmlNode
         				throw new XmlException ("Parent node not present.");
         			}
         		XmlNode child = parent.createNode (nodeName);
-        		node.appendChild (child.getNode());
+        		node.appendChild (child.getNode ());
 
         		return child;
         	}

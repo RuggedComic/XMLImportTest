@@ -11,6 +11,6 @@ public class dBMain
     		{
     			dBConnection dBConn = new dBConnection ();
     			
-    			dBDataSet dataset = new dBDataSet (dBConn);
+    			dBDataSet dataset	= new dBDataSet (dBConn);
     		}
     }

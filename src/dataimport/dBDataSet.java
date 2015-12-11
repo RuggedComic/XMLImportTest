@@ -124,7 +124,6 @@ public class dBDataSet
 						System.out.print ("CHQ Address Line 4 : " + CHQAddr4);
 						System.out.print ("Value              : " + Value);
 		    		}
-		    
 				rs.close ();
 				stmt.close ();
 			}

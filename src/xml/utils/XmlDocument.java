@@ -144,7 +144,7 @@ public class XmlDocument
 					DOMSource source							= new DOMSource (document);
 					StreamResult result							= new StreamResult (file);
 
-					transformer.transform(source, result);
+					transformer.transform (source, result);
 				}
 			catch (TransformerConfigurationException e)
 				{
@@ -164,7 +164,7 @@ public class XmlDocument
 							{
 								document = createNewDocument();
 							}
-						document.appendChild(node.getNode());
+						document.appendChild (node.getNode());
 
 						TransformerFactory transformerFactory	= TransformerFactory.newInstance ();
 						Transformer transformer					= transformerFactory.newTransformer ();
